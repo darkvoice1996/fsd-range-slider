@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/darkvoice1996/fsd-range-slider/issues"
   },
-  "homepage": "https://github.com/darkvoice1996/fsd-range-slider#readme"
+  "homepage": "https://github.com/darkvoice1996/fsd-range-slider#readme",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
 }
