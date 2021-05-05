@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/darkvoice1996/fsd-range-slider#readme",
   "devDependencies": {
+    "sass": "^1.32.12",
     "typescript": "^4.2.4"
   }
 }
