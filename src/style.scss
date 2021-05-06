@@ -4,23 +4,47 @@
 
 .rs {
     width: 266px;
+    position: relative;
 
     &-input {
-        z-index: 2;
+        z-index: 25;
 
-        width: 100%;
+        width: 266px;
+        height: 6px;
+        padding: 0;
         margin: 0;
 
-        &__min {
-            
-        }
-        &__max {
+        position: absolute;
 
+        appearance: none;
+        pointer-events: none;
+        opacity: 0;
+        
+        &::-webkit-slider-thumb {
+            cursor: pointer;
+            pointer-events: all;
+
+            width: 12px;
+            height: 12px;
+            
+            appearance: none;
+            background-color: red;
         }
+
+        &::-webkit-slider-runnable-track {
+            height: 6px;
+            background-color: green;
+        }
+
+
+        // &__min {
+        // }
+        // &__max {
+        // }
     }
 
     &-slider {
-        width: 100%;
+        width: 266px;
         height: 6px;
         position: relative;
 
@@ -70,13 +94,12 @@
 
             &_left {
                 left: 25%;
-                transform: translate(-25%, -25%);
-
+                transform: translate(0, -25%);
             }
 
             &_right {
                 right: 25%;
-                transform: translate(25%, -25%);
+                transform: translate(0, -25%);
             }
         }
     }
