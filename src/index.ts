@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 let inputMin: HTMLInputElement = document.querySelector('.rs-input__min')!
 let inputMax: HTMLInputElement = document.querySelector('.rs-input__max')!
 
@@ -36,4 +38,3 @@ function setMaxValue() {
 
 inputMin.addEventListener('input', setMinValue)
 inputMax.addEventListener('input', setMaxValue)
-
