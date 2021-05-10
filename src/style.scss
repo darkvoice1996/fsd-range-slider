@@ -16,9 +16,9 @@
 
         position: absolute;
 
-        appearance: none;
+        // appearance: none;
         pointer-events: none;
-        opacity: 0;
+        opacity: 1;
         
         &::-webkit-slider-thumb {
             cursor: pointer;
@@ -27,20 +27,21 @@
             width: 12px;
             height: 12px;
             
-            appearance: none;
-            background-color: red;
+            // appearance: none;
         }
 
         &::-webkit-slider-runnable-track {
             height: 6px;
-            background-color: green;
         }
 
 
-        // &__min {
-        // }
-        // &__max {
-        // }
+        &__left {
+            bottom: -50px;
+        }
+
+        &__right {
+            bottom: -100px;
+        }
     }
 
     &-slider {

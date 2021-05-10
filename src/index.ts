@@ -1,40 +1,45 @@
 import $ from 'jquery'
+import jQuery from 'jquery'
 
-let inputMin: HTMLInputElement = document.querySelector('.rs-input__min')!
-let inputMax: HTMLInputElement = document.querySelector('.rs-input__max')!
+(function( $ ) {
 
-let thumbLeft: HTMLDivElement = document.querySelector('.rs-slider__thumb_left')!
-let thumbRight: HTMLDivElement = document.querySelector('.rs-slider__thumb_right')!
-let range: HTMLDivElement = document.querySelector('.rs-slider__range')!
+    let methods = {
+        createInput() {
+            return `<input type="range" class="rs-input" name="" id="" min="0" max="100" value="25">`
+        }
+    }
 
-console.dir(thumbLeft)
+    $.fn.fsdRangeSlider = function(options) {
+   
+        let settings = $.extend({
+            min: 0,
+            max: 100,
+            secondThumb: true,
+        }, options)
 
-function setMinValue() {
-    let _this: HTMLInputElement = inputMin,
-        min: number = parseInt(_this.min),
-        max: number = parseInt(_this.max)
+        return this.each(function () {
+            $(this).html('<div class="rs"></div>')
 
-    _this.value = Math.min(parseInt(_this.value), parseInt(inputMax.value)).toString()
 
-    let percent: string = (((parseInt(_this.value) - min) / (max - min)) * 100) + '%'
 
-    thumbLeft.style.left = percent
-    range.style.left = percent
+            if (!settings.secondThumb) {
+                $('.rs').html(methods.createInput())
+                let input = $('.rs-input')
+            } else {
+                $('rs').html(methods.createInput())
+                $('rs').html(methods.createInput())
+                let inputLeft = $('rs-input')[0]
+                let inputRight = $('rs-input')[1]
+
+
+            }
+        })
+  
+    };
+  })(jQuery);
+
+  $('.fsdRangeSlider').fsdRangeSlider()
+
+function createInput(arg0: number, arg1: number, arg2: number): any {
+    throw new Error('Function not implemented.');
 }
-
-function setMaxValue() {
-    let _this: HTMLInputElement = inputMax,
-        min = parseInt(_this.min),
-        max = parseInt(_this.max)
-    
-    _this.value = Math.max(parseInt(_this.value), parseInt(inputMin.value)).toString()
-
-    let percent: string = 100 - (((parseInt(_this.value) - min) / (max - min)) * 100) + '%'
-
-    thumbRight.style.right = percent
-    range.style.right = percent
-}
-
-
-inputMin.addEventListener('input', setMinValue)
-inputMax.addEventListener('input', setMaxValue)
