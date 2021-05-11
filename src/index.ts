@@ -11,13 +11,13 @@ import jQuery from 'jquery'
 
     $.fn.fsdRangeSlider = function(options) {
 
-        interface Isettings {
+        interface ISettings {
             min: number
             max: number
             isInterval: boolean
         }
    
-        let settings : Isettings = $.extend({
+        let settings : ISettings = $.extend({
             min: 0,
             max: 100,
 
