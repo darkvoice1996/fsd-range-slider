@@ -10,36 +10,26 @@ import jQuery from 'jquery'
     }
 
     $.fn.fsdRangeSlider = function(options) {
+
+        interface Isettings {
+            min: number
+            max: number
+            isInterval: boolean
+        }
    
-        let settings = $.extend({
+        let settings : Isettings = $.extend({
             min: 0,
             max: 100,
-            secondThumb: true,
+
+            isInterval: true,
+
         }, options)
 
         return this.each(function () {
-            $(this).html('<div class="rs"></div>')
-
-
-
-            if (!settings.secondThumb) {
-                $('.rs').html(methods.createInput())
-                let input = $('.rs-input')
-            } else {
-                $('rs').html(methods.createInput())
-                $('rs').html(methods.createInput())
-                let inputLeft = $('rs-input')[0]
-                let inputRight = $('rs-input')[1]
-
-
-            }
+            
         })
   
     };
   })(jQuery);
 
   $('.fsdRangeSlider').fsdRangeSlider()
-
-function createInput(arg0: number, arg1: number, arg2: number): any {
-    throw new Error('Function not implemented.');
-}
