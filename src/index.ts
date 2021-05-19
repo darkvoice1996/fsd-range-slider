@@ -1,15 +1,14 @@
 import $ from 'jquery'
 import jQuery from 'jquery'
 
-(function( $ ) {
+(function ($) {
+    $.fn.fsdRangeSlider = function (options) {
+        return this.each(function () {
 
-
-
-    $.fn.fsdRangeSlider = function(options) {
-
-
-  
+            
+        })
     };
-  })(jQuery);
+})(jQuery);
 
-  $('.fsdRangeSlider').fsdRangeSlider()
+$('.fsd-range-slider').fsdRangeSlider()
+
