@@ -1,0 +1,96 @@
+// Develope-mode temporary styles
+body {
+    background-color: rgb(127, 255, 212, 0.25);
+    
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fsd-range-slider {
+    width: 266px;
+    height: 100px;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+// Plugin default style
+.frs {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 100%;
+
+    &-input {
+        margin: 0;
+    }
+
+    &-slider {
+
+        position: relative;
+
+        &__track {
+            z-index: 5;
+            position: absolute;
+
+            width: 100%;
+            height: 6px;
+            box-sizing: border-box;
+            
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            border-radius: 3px;
+    
+            // background-color: #fff;
+        }
+
+        &__range {
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+
+            // width: 60%;
+            height: 6px;
+
+            border-radius: 3px;
+            
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
+
+        &__thumb {
+            z-index: 15;
+            position: absolute;
+            top: 0;
+
+            width: 12px;
+            height: 12px;
+            box-sizing: border-box;
+
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+
+            &_min {
+                left: 20%;
+                transform: translate(-25%, -25%);
+            }
+
+            &_max {
+                right: 20%;
+                transform: translate(25%, -25%);
+            }
+        }
+
+
+    }    
+
+}
